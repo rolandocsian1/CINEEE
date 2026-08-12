@@ -2,6 +2,15 @@ const dotenv = require("dotenv");
 const envFile = process.env.NODE_ENV === "production" ? ".env.production" : ".env.development";
 dotenv.config({ path: envFile });
 
+console.log("=== DEBUG ENV ===");
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("DB_HOST:", process.env.DB_HOST);
+console.log("DB_USER:", process.env.DB_USER);
+console.log("DB_PASSWORD existe:", !!process.env.DB_PASSWORD);
+console.log("DB_NAME:", process.env.DB_NAME);
+console.log("DB_SSL:", process.env.DB_SSL);
+console.log("=================");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
